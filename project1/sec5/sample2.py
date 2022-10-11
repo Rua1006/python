@@ -7,13 +7,24 @@
 # 출력예시
 # KBO
 
-KBO=str(input())
-print("KBO",KBO)
+in1 = input("첫번째 단어 :")
+in2 = input("두번째 단어 :")
+in3 = input("세번째 단어 :")
+print(in1[0]+in2[0]+in3[0])
 
-for(Korea, Baseball, Organiztion) in KBO:
-    def kbo():
-        a = int(input("첫번째 단어 : "))
-        b = int(input("두번째 단어 : "))
-        c = int(input("세번째 단어 : "))
-        return a + b + c
-print(kbo)
+class WordAbbr:
+    word = ""
+
+    def inputWord(self):
+        in1 = input("첫번째 단어 :")
+        in2 = input("두번째 단어 :")
+        in3 = input("세번째 단어 :")
+        self.word = in1[0] + in2[0] + in3[0]
+        return self.word
+
+    def printWord(self):
+        print(self.word)
+
+w = WordAbbr()
+w.inputWord()
+w.printWord()
