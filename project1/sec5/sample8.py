@@ -3,42 +3,26 @@
 # 입금기능(deposit), 출금기능(withdraw), 잔액조회(getBalance)
 # 클래스의 멤버를 선언하여 작동될 수 있도록 할 것.
 
-class bank:
-
-    def __int__(self, balance, money, idNum, idName):
-        self.balance = balance
-        self.money = money
+class Account:
+    balance = 0
+    def creatAccount(self, idNum, idName):
         self.idNum = idNum
         self.idName = idName
-    print()
+        self.balance = 0
 
-    def add(self):
-        balance = self.balance+self.money
-        return balance
+    def deposit(self, money):
+        self.balance+=money
 
-    def minus(self):
-        balance = self.balance-self.money
-        return balance
+    def withdraw(self, money):
+        self.balance-=money
 
-    def balance(self):
-        balance = self.balance()
-        return balance
 
-    print("1-입금")
-    print("2-출금")
-    print("3-잔액조회")
+    def getBalance(self):
+        return self.balance
 
-    num = input("작업번호 선택 1/2/3")
-    num1 = int(input("입금"))
-    num2 = int(input("출금"))
-    num3 = int(input("잔액조회"))
-
-while True:
-    if num1 == '1':
-        print(num1,add())
-    elif num2 == '2':
-        print(num2,minus())
-    elif num3 == '3':
-        print(num3,balance())
-    else:
-        print("작업종료")
+account = Account()
+account.creatAccount("7777","강병수")
+account.deposit(1000000000)
+account.withdraw(777777)
+balance = account.getBalance()
+print("계좌번호 :",account.idNum,"\n계좌주 : ",account.idName,"\n잔고 : ", balance)
